@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Phở Hầm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Saira:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 index-page">
+
+    <header id="header" class="header sticky top-0 z-[100]">
+        <nav class="bg-white/95 backdrop-blur-md py-3 px-6 md:px-20 flex justify-between items-center shadow-sm">
+            
+            <a href="home.html" class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                <div class="bg-yellow-500 p-2 rounded">
+                    <span class="text-white font-bold">PHỞ HẦM</span>
+                </div>
+                <div class="hidden md:block">
+                    <h1 class="text-red-700 font-bold leading-none">PHỞ HẦM</h1>
+                    <p class="text-[10px] text-gray-500">Real Vietnamese Noodles</p>
+                </div>
+            </div>
+            </a>
+
+            <div id="navmenu" class="navmenu">
+                <ul class="hidden lg:flex gap-6 text-[13px] font-semibold uppercase tracking-wide">
+                    <li><a href="home.html" class="nav-link transition-all hover:text-red-600">Trang chủ</a></li>
+                    <li><a href="menu.html" class="nav-link transition-all hover:text-red-600">Thực đơn</a></li>
+                    <li><a href="reservation.html" class="nav-link transition-all hover:text-red-600">Đặt bàn</a></li>
+                    <li><a href="market.html" class="nav-link transition-all hover:text-red-600">Mua sắm</a></li>
+                    <li><a href="blog.html" class="nav-link transition-all hover:text-red-600">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link transition-all hover:text-red-600">Liên hệ</a></li>
+                </ul>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="relative mr-2 cursor-pointer group">
+                    <i class="fa-solid fa-cart-shopping text-gray-600 group-hover:text-red-600 transition-all"></i>
+                    <span class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                </div>
+
+                <div class="hidden sm:flex gap-2">
+                    <a href="sign-in.html" class="text-sm font-bold px-4 py-2 rounded-lg hover:bg-gray-100 transition-all inline-block">Đăng nhập</a>
+                    
+                    <a href="sign-up.html" class="bg-red-700 text-white text-sm font-bold px-5 py-2 rounded-lg shadow-md hover:bg-red-800 transition-all transform active:scale-95 inline-block text-center">Đăng ký</a>
+                </div>
+
+                <button id="mobile-nav-toggle" class="lg:hidden text-gray-700 p-2">
+                    <i class="fa-solid fa-bars-staggered text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="fixed inset-0 w-full h-screen hidden z-[999]">
+            <div id="menu-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"></div>
+            
+            <div id="menu-content" class="absolute top-0 right-0 h-full w-4/5 max-w-sm bg-white shadow-2xl translate-x-full transition-transform duration-300 p-8 flex flex-col">
+                <div class="flex justify-between items-center mb-10 border-b pb-4">
+                    <span class="font-bold text-red-800 tracking-widest uppercase">Danh mục</span>
+                    <button id="close-menu-btn" class="group text-gray-400 hover:text-black transition-all">
+                        <i class="fa-solid fa-xmark text-2xl transform group-hover:rotate-90 transition-transform duration-300"></i>
+                    </button>
+                </div>
+
+                <ul class="flex flex-col gap-6 text-[15px] font-bold uppercase tracking-wider">
+                    <li class="mobile-menu-item"><a href="home.html" class="mobile-nav-link">Trang chủ</a></li>
+                    <li class="mobile-menu-item"><a href="menu.html" class="mobile-nav-link">Thực đơn</a></li>
+                    <li class="mobile-menu-item"><a href="reservation.html" class="mobile-nav-link">Đặt bàn</a></li>
+                    <li class="mobile-menu-item"><a href="market.html" class="mobile-nav-link">Mua sắm</a></li>
+                    <li class="mobile-menu-item"><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+                    <li class="mobile-menu-item"><a href="contact.html" class="mobile-nav-link">Liên hệ</a></li>
+                </ul>
+
+                <div class="mt-auto space-y-4">
+                    <a href="sign-in.html" class="block w-full py-4 border border-gray-200 rounded-xl font-bold text-sm uppercase transition-all hover:bg-gray-50 active:scale-95 text-center">
+                        Đăng nhập
+                    </a>
+                    
+                    <a href="sign-up.html" class="block w-full py-4 bg-red-700 text-white rounded-xl font-bold text-sm uppercase shadow-lg shadow-red-100 transition-all hover:bg-red-800 active:scale-95 text-center">
+                        Đăng ký
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="side-cart" class="fixed inset-0 w-full h-screen z-[1000] hidden">
+            <div id="cart-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"></div>
+            
+            <div id="cart-content" class="absolute top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
+                <div class="flex justify-between items-center p-6 border-b">
+                    <div class="flex items-center gap-2 text-red-800">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span class="font-bold text-lg uppercase tracking-tight">Giỏ hàng (0)</span>
+                    </div>
+                    <button id="close-cart-btn" class="text-gray-400 hover:text-black transition-all">
+                        <i class="fa-solid fa-xmark text-2xl"></i>
+                    </button>
+                </div>
+
+                <div class="flex-1 flex flex-col items-center justify-center p-10 text-center">
+                    <div class="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-basket-shopping text-4xl text-gray-300"></i>
+                    </div>
+                    <h3 class="text-gray-500 font-medium">Giỏ hàng của bạn đang trống</h3>
+                    <p class="text-gray-400 text-sm mt-2">Hãy chọn món ăn ngon từ thực đơn để tiếp tục mua sắm.</p>
+                    <button onclick="toggleCart(false)" class="mt-8 px-8 py-3 bg-red-700 text-white font-bold rounded-xl shadow-lg hover:bg-red-800 transition-all uppercase text-sm">
+                        Quay lại thực đơn
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-white to-orange-100 py-12 px-4 font-sans">
+        <div class="max-w-md w-full bg-white rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] p-10 md:p-12 border border-white/50 backdrop-blur-sm animate-fadeIn">
+            
+            <div class="text-center mb-10">
+                <div class="inline-block p-4 bg-amber-400 rounded-3xl shadow-lg shadow-amber-100 mb-6 group transition-transform hover:rotate-6">
+                    <div class="w-12 h-12 flex items-center justify-center text-white text-2xl font-black italic">PH</div>
+                </div>
+                <h1 class="text-4xl font-black text-red-800 mb-2 tracking-tight">Đăng nhập</h1>
+                <p class="text-gray-500 font-medium">Chào mừng bạn trở lại với <span class="text-red-600 font-bold">PHỞ HẦM</span></p>
+            </div>
+
+            <form action="#" class="space-y-6">
+                <div class="group">
+                    <label class="block text-sm font-bold text-gray-700 mb-2 ml-1 group-focus-within:text-red-600 transition-colors">Email</label>
+                    <div class="relative">
+                        <span class="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-red-500 transition-colors">✉</span>
+                        <input type="email" placeholder="email@example.com" 
+                            class="w-full pl-12 pr-6 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-red-500 focus:ring-4 focus:ring-red-500/10 outline-none transition-all shadow-inner">
+                    </div>
+                </div>
+
+                <div class="group">
+                    <div class="flex justify-between items-center mb-2 ml-1">
+                        <label class="text-sm font-bold text-gray-700 group-focus-within:text-red-600 transition-colors">Mật khẩu</label>
+                        <a href="#" class="text-xs font-bold text-red-600 hover:underline">Quên mật khẩu?</a>
+                    </div>
+                    <div class="relative">
+                        <span class="absolute left-5 top-1/2 -translate-y-1/2 text-gray-400 group-focus-within:text-red-500 transition-colors">🔒</span>
+                        <input type="password" placeholder="••••••••" 
+                            class="w-full pl-12 pr-6 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-red-500 focus:ring-4 focus:ring-red-500/10 outline-none transition-all shadow-inner">
+                    </div>
+                </div>
+
+                <div class="flex items-center px-1">
+                    <input type="checkbox" id="remember" class="w-4 h-4 text-red-600 border-gray-300 rounded focus:ring-red-500 cursor-pointer">
+                    <label for="remember" class="ml-2 text-sm font-medium text-gray-600 cursor-pointer select-none">Ghi nhớ tôi trên thiết bị này</label>
+                </div>
+
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-black py-4 rounded-2xl shadow-xl shadow-red-100 transition-all transform hover:-translate-y-1 active:scale-[0.98] flex items-center justify-center gap-2">
+                    Đăng nhập ngay
+                </button>
+            </form>
+
+            <div class="mt-10 text-center space-y-4">
+                <p class="text-sm text-gray-500 font-medium">
+                    Chưa có tài khoản? 
+                    <a href="#" class="text-red-600 font-black hover:underline underline-offset-4 ml-1">Đăng ký ngay</a>
+                </p>
+                
+                <div class="pt-4 border-t border-gray-100">
+                    <a href="home.html" class="inline-flex items-center text-xs font-bold text-gray-400 hover:text-gray-900 transition-colors group">
+                        <span class="mr-2 group-hover:-translate-x-1 transition-transform">←</span>
+                        Quay lại trang chủ
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="/js/main.js"></script>
+</body>
+</html>

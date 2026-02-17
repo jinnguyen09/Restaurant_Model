@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth"> <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - Phở Hầm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Saira:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 index-page">
+
+    <header id="header" class="header sticky top-0 z-[100]">
+        <nav class="bg-white/95 backdrop-blur-md py-3 px-6 md:px-20 flex justify-between items-center shadow-sm">
+            
+            <a href="home.html" class="flex items-center gap-2">
+                <div class="flex items-center gap-2">
+                <div class="bg-yellow-500 p-2 rounded">
+                    <span class="text-white font-bold">PHỞ HẦM</span>
+                </div>
+                <div class="hidden md:block">
+                    <h1 class="text-red-700 font-bold leading-none">PHỞ HẦM</h1>
+                    <p class="text-[10px] text-gray-500">Real Vietnamese Noodles</p>
+                </div>
+            </div>
+            </a>
+
+            <div id="navmenu" class="navmenu">
+                <ul class="hidden lg:flex gap-6 text-[13px] font-semibold uppercase tracking-wide">
+                    <li><a href="home.html" class="nav-link transition-all hover:text-red-600">Trang chủ</a></li>
+                    <li><a href="menu.html" class="nav-link transition-all hover:text-red-600">Thực đơn</a></li>
+                    <li><a href="reservation.html" class="nav-link transition-all hover:text-red-600">Đặt bàn</a></li>
+                    <li><a href="market.html" class="nav-link transition-all hover:text-red-600">Mua sắm</a></li>
+                    <li><a href="blog.html" class="nav-link transition-all hover:text-red-600">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link transition-all hover:text-red-600 active">Liên hệ</a></li>
+                </ul>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <div class="relative mr-2 cursor-pointer group">
+                    <i class="fa-solid fa-cart-shopping text-gray-600 group-hover:text-red-600 transition-all"></i>
+                    <span class="absolute -top-2 -right-2 bg-red-600 text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+                </div>
+
+                <div class="hidden sm:flex gap-2">
+                    <a href="sign-in.html" class="text-sm font-bold px-4 py-2 rounded-lg hover:bg-gray-100 transition-all inline-block">Đăng nhập</a>
+                    
+                    <a href="sign-up.html" class="bg-red-700 text-white text-sm font-bold px-5 py-2 rounded-lg shadow-md hover:bg-red-800 transition-all transform active:scale-95 inline-block text-center">Đăng ký</a>
+                </div>
+
+                <button id="mobile-nav-toggle" class="lg:hidden text-gray-700 p-2">
+                    <i class="fa-solid fa-bars-staggered text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="fixed inset-0 w-full h-screen hidden z-[999]">
+            <div id="menu-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"></div>
+            
+            <div id="menu-content" class="absolute top-0 right-0 h-full w-4/5 max-w-sm bg-white shadow-2xl translate-x-full transition-transform duration-300 p-8 flex flex-col">
+                <div class="flex justify-between items-center mb-10 border-b pb-4">
+                    <span class="font-bold text-red-800 tracking-widest uppercase">Danh mục</span>
+                    <button id="close-menu-btn" class="group text-gray-400 hover:text-black transition-all">
+                        <i class="fa-solid fa-xmark text-2xl transform group-hover:rotate-90 transition-transform duration-300"></i>
+                    </button>
+                </div>
+
+                <ul class="flex flex-col gap-6 text-[15px] font-bold uppercase tracking-wider">
+                    <li class="mobile-menu-item"><a href="home.html" class="mobile-nav-link">Trang chủ</a></li>
+                    <li class="mobile-menu-item"><a href="menu.html" class="mobile-nav-link">Thực đơn</a></li>
+                    <li class="mobile-menu-item"><a href="reservation.html" class="mobile-nav-link">Đặt bàn</a></li>
+                    <li class="mobile-menu-item"><a href="market.html" class="mobile-nav-link">Mua sắm</a></li>
+                    <li class="mobile-menu-item"><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+                    <li class="mobile-menu-item"><a href="contact.html" class="mobile-nav-link active">Liên hệ</a></li>
+                </ul>
+
+                <div class="mt-auto space-y-4">
+                    <a href="sign-in.html" class="block w-full py-4 border border-gray-200 rounded-xl font-bold text-sm uppercase transition-all hover:bg-gray-50 active:scale-95 text-center">
+                        Đăng nhập
+                    </a>
+                    
+                    <a href="sign-up.html" class="block w-full py-4 bg-red-700 text-white rounded-xl font-bold text-sm uppercase shadow-lg shadow-red-100 transition-all hover:bg-red-800 active:scale-95 text-center">
+                        Đăng ký
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="side-cart" class="fixed inset-0 w-full h-screen z-[1000] hidden">
+            <div id="cart-overlay" class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300"></div>
+            
+            <div id="cart-content" class="absolute top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
+                <div class="flex justify-between items-center p-6 border-b">
+                    <div class="flex items-center gap-2 text-red-800">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span class="font-bold text-lg uppercase tracking-tight">Giỏ hàng (0)</span>
+                    </div>
+                    <button id="close-cart-btn" class="text-gray-400 hover:text-black transition-all">
+                        <i class="fa-solid fa-xmark text-2xl"></i>
+                    </button>
+                </div>
+
+                <div class="flex-1 flex flex-col items-center justify-center p-10 text-center">
+                    <div class="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center mb-4">
+                        <i class="fa-solid fa-basket-shopping text-4xl text-gray-300"></i>
+                    </div>
+                    <h3 class="text-gray-500 font-medium">Giỏ hàng của bạn đang trống</h3>
+                    <p class="text-gray-400 text-sm mt-2">Hãy chọn món ăn ngon từ thực đơn để tiếp tục mua sắm.</p>
+                    <button onclick="toggleCart(false)" class="mt-8 px-8 py-3 bg-red-700 text-white font-bold rounded-xl shadow-lg hover:bg-red-800 transition-all uppercase text-sm">
+                        Quay lại thực đơn
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="bg-gray-50 min-h-screen py-16 px-4 font-sans text-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <header class="text-center mb-16 animate-fadeIn">
+                <h1 class="text-5xl font-black text-gray-900 mb-4">LIÊN <span class="text-red-600">HỆ</span></h1>
+                <p class="text-gray-500 text-lg max-w-2xl mx-auto italic">
+                    Chúng tôi luôn sẵn sàng lắng nghe ý kiến của bạn! Hãy liên hệ với chúng tôi qua biểu mẫu bên dưới hoặc sử dụng thông tin liên lạc để gửi phản hồi, đặt câu hỏi hoặc chia sẻ trải nghiệm của bạn về ẩm thực Việt Nam tại Phở Hầm.
+                </p>
+            </header>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                
+                <div class="bg-white p-10 rounded-[2.5rem] shadow-[0_10px_40px_-15px_rgba(0,0,0,0.08)] border border-gray-50">
+                    <h2 class="text-3xl font-black mb-8 text-gray-800">Gửi tin nhắn</h2>
+                    
+                    <form action="#" class="space-y-6">
+                        <div class="group">
+                            <label class="block text-sm font-bold text-gray-700 mb-2 transition-colors group-focus-within:text-red-600">Họ và tên</label>
+                            <input type="text" placeholder="Nguyễn Văn A" 
+                                class="w-full px-6 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-red-500 outline-none transition-all shadow-inner">
+                        </div>
+
+                        <div class="group">
+                            <label class="block text-sm font-bold text-gray-700 mb-2 transition-colors group-focus-within:text-red-600">Email</label>
+                            <input type="email" placeholder="email@example.com" 
+                                class="w-full px-6 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-red-500 outline-none transition-all shadow-inner">
+                        </div>
+
+                        <div class="group">
+                            <label class="block text-sm font-bold text-gray-700 mb-2 transition-colors group-focus-within:text-red-600">Chủ đề</label>
+                            <input type="text" placeholder="Tiêu đề tin nhắn" 
+                                class="w-full px-6 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-red-500 outline-none transition-all shadow-inner">
+                        </div>
+
+                        <div class="group">
+                            <label class="block text-sm font-bold text-gray-700 mb-2 transition-colors group-focus-within:text-red-600">Nội dung</label>
+                            <textarea rows="5" placeholder="Nội dung tin nhắn của bạn..." 
+                                    class="w-full px-6 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-red-500 outline-none transition-all shadow-inner resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-black py-4 rounded-2xl shadow-lg shadow-red-100 transition-all transform hover:-translate-y-1 active:scale-95 flex items-center justify-center gap-3">
+                            <span class="text-xl">🚀</span> Gửi tin nhắn
+                        </button>
+                    </form>
+                </div>
+
+                <div class="space-y-6">
+                    
+                    <div class="group bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-6">
+                        <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-500 text-2xl group-hover:bg-amber-500 group-hover:text-white transition-colors shadow-inner">
+                            📍
+                        </div>
+                        <div>
+                            <p class="text-xs font-black text-gray-400 uppercase tracking-widest mb-1">Địa chỉ</p>
+                            <p class="font-bold text-gray-800">32 Hope St, Liverpool L1 9BX, United Kingdom</p>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-6">
+                        <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-green-500 text-2xl group-hover:bg-green-500 group-hover:text-white transition-colors shadow-inner">
+                            📞
+                        </div>
+                        <div>
+                            <p class="text-xs font-black text-gray-400 uppercase tracking-widest mb-1">Điện thoại</p>
+                            <p class="font-bold text-gray-800">+44 151 708 0355</p>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-6">
+                        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-500 text-2xl group-hover:bg-blue-500 group-hover:text-white transition-colors shadow-inner">
+                            ✉
+                        </div>
+                        <div>
+                            <p class="text-xs font-black text-gray-400 uppercase tracking-widest mb-1">Email</p>
+                            <p class="font-bold text-gray-800">huongvietliverpool@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="group bg-white p-6 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-6">
+                        <div class="w-14 h-14 bg-red-50 rounded-2xl flex items-center justify-center text-red-500 text-2xl group-hover:bg-red-500 group-hover:text-white transition-colors shadow-inner">
+                            🕒
+                        </div>
+                        <div>
+                            <p class="text-xs font-black text-gray-400 uppercase tracking-widest mb-1">Giờ mở cửa</p>
+                            <p class="font-bold text-gray-800">T2-T6: 7:00 - 22:00 | T7-CN: 12:00 - 23:00 | T3: Nghỉ</p>
+                        </div>
+                    </div>
+
+                    <div class="rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white h-72 group relative">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.1102!2d105.67!3d18.67!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDQwJzEyLjAiTiAxMDXCsDQwJzEyLjAiRQ!5e0!3m2!1svi!2svn!4v123456789" 
+                            class="w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700" 
+                            style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl text-[10px] font-black uppercase shadow-lg">
+                            View larger map
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#020617] text-gray-300 pt-16 pb-8 px-6 md:px-20 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            <div class="space-y-4">
+                <div class="flex items-center gap-2">
+                <div class="bg-yellow-500 p-2 rounded">
+                    <span class="text-white font-bold">PHỞ HẦM</span>
+                </div>
+                <div class="hidden md:block">
+                    <h1 class="text-red-700 font-bold leading-none">PHỞ HẦM</h1>
+                    <p class="text-[10px] text-gray-500">Real Vietnamese Noodles</p>
+                </div>
+            </div>
+                <p class="text-sm leading-relaxed text-gray-400">Hương vị truyền thống Việt Nam, phục vụ tận tâm từ 2015.</p>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">Liên kết</h4>
+                <ul class="space-y-3 text-sm">
+                    <li><a href="#" class="hover:text-white transition-soft">Giới thiệu</a></li>
+                    <li><a href="#" class="hover:text-white transition-soft">Thực đơn</a></li>
+                    <li><a href="#" class="hover:text-white transition-soft">Đặt bàn</a></li>
+                    <li><a href="#" class="hover:text-white transition-soft">Tin tức</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">Giờ mở cửa</h4>
+                <div class="space-y-3 text-sm">
+                    <div class="flex flex-col">
+                        <span class="text-gray">Thứ 4 - Thứ 2</span>
+                        <span class="text-white">12:00 - 22:00</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-gray">Thứ 7 - Chủ nhật</span>
+                        <span class="text-white">12:00 - 23:00</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-gray">Thứ 3</span>
+                        <span class="text-white">Nghỉ</span>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-white font-bold mb-6 text-sm uppercase tracking-widest">Liên hệ</h4>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li class="flex items-start gap-3">
+                        <i class="fa-solid fa-location-dot mt-1 text-gray-500"></i>
+                        <span>32 Hope St, Liverpool L1 9BX, United Kingdom</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-phone text-gray-500"></i>
+                        <span>+44 151 708 0355</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i class="fa-solid fa-envelope text-gray-500"></i>
+                        <span>huongvietliverpool@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-xs text-gray-500">© 2026 PHỞ HẦM. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-soft text-white">
+                    <i class="fa-brands fa-facebook-f text-sm"></i>
+                </a>
+                <a href="#" class="w-9 h-9 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition-soft text-white">
+                    <i class="fa-brands fa-instagram text-sm"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>
